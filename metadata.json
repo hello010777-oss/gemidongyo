@@ -1,0 +1,6 @@
+{
+  "name": "유초이음 놀이주제별 맞춤 동요 추천앱",
+  "description": "유치원과 초등학교 저학년(1~2학년)을 대상으로 이음 교육과정 놀이 주제별 맞춤 동요와 수업 팁을 바로 찾아주는 AI 동요 추천 서비스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

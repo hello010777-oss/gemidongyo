@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'SchoolSafeOuting';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimNadeuriTTF-L.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SchoolSafeOuting';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimNadeuriTTF-B.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@theme {
+  --font-sans: "SchoolSafeOuting", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base style resets if any, or animation configurations */
+body {
+  font-family: var(--font-sans);
+  background-color: #f7fafc;
+}
+
+/* Custom continuous float animation for a friendly whimsical vibe */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5s ease-in-out infinite;
+}
