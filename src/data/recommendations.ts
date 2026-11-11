@@ -682,4 +682,78 @@ export const DEFAULT_RECOMMENDATIONS: Record<string, RecommendationResponse> = {
       },
     ],
   },
+
+  "인성송": {
+    theme: "인성 [인성송]",
+    introduction:
+      "마음을 따뜻하게 키워 주는 인성 동요들입니다. 수업 시작·종례·친구 관계 활동에 바로 활용해 보세요.",
+    songs: [
+      {
+        id: "insung-5",
+        title: "행복이 된대요",
+        themeReason:
+          "작은 실천이 모여 행복이 된다는 메시지를 전하는 인성 동요입니다. 긍정적인 교실 분위기와 마음 나누기에 잘 어울립니다.",
+        keyWords: ["행복", "인성", "긍정", "실천"],
+        recommendedActivity:
+          "오늘 나를 행복하게 한 일·친구를 행복하게 해 준 일을 이야기한 뒤 노래를 불러 보세요.",
+        youtubeSearchQuery: "동요 행복이 된대요",
+        lyricsPreview: "작은 마음이 모여 행복이 된대요",
+      },
+      {
+        id: "insung-6",
+        title: "너라서 참 좋은날",
+        themeReason:
+          "친구가 있어 좋은 날을 노래하며 우정과 감사의 마음을 키워 줍니다. 친구 관계·학급 단합 활동에 적합합니다.",
+        keyWords: ["친구", "감사", "우정", "인성"],
+        recommendedActivity:
+          "옆 친구에게 '너라서 좋아' 칭찬 쪽지를 전한 뒤 다 같이 노래를 불러 보세요.",
+        youtubeSearchQuery: "동요 너라서 참 좋은날",
+        lyricsPreview: "너라서 참 좋은날 함께라서 행복해",
+      },
+      {
+        id: "insung-7",
+        title: "틀린 게 아니야",
+        themeReason:
+          "실수해도 괜찮다는 위로와 용기를 담은 인성 동요입니다. 자존감·실패를 받아들이는 마음 기르기에 좋아요.",
+        keyWords: ["자존감", "용기", "위로", "인성"],
+        recommendedActivity:
+          "틀려도 다시 해 본 경험을 나눈 뒤, '괜찮아, 다시 하면 돼'를 외치며 노래를 불러 보세요.",
+        youtubeSearchQuery: "동요 틀린 게 아니야",
+        lyricsPreview: "틀린 게 아니야 다시 하면 돼",
+      },
+      {
+        id: "insung-8",
+        title: "세잎클로버",
+        themeReason:
+          "소중함과 희망을 세잎클로버에 비유해 노래하는 동요입니다. 나를 아끼고 친구를 소중히 여기는 인성 주제에 잘 맞습니다.",
+        keyWords: ["소중함", "희망", "인성", "나"],
+        recommendedActivity:
+          "세잎클로버 모양에 나의 장점 세 가지를 적어 교실에 붙여 보세요.",
+        youtubeSearchQuery: "동요 세잎클로버",
+        lyricsPreview: "세잎클로버 찾아 헤매던 그날",
+      },
+      {
+        id: "insung-9",
+        title: "꿈이 자라는 밭",
+        themeReason:
+          "꿈을 가꾸는 마음을 노래해 자기이해·미래 희망 활동과 잘 연결됩니다. 유치원·초등 인성·진로 도입에 적합합니다.",
+        keyWords: ["꿈", "희망", "성장", "인성"],
+        recommendedActivity:
+          "내 꿈을 그림으로 그려 '꿈의 밭' 게시판에 붙인 뒤 노래를 불러 보세요.",
+        youtubeSearchQuery: "동요 꿈이 자라는 밭",
+        lyricsPreview: "꿈이 자라는 밭에 씨앗을 심어요",
+      },
+      {
+        id: "insung-10",
+        title: "나무가 된다면",
+        themeReason:
+          "나무가 되어 나누고 지켜 주는 마음을 노래합니다. 배려·나눔·환경 사랑과 인성을 함께 다루기 좋습니다.",
+        keyWords: ["나눔", "배려", "나무", "인성"],
+        recommendedActivity:
+          "내가 나무가 된다면 누구에게 무엇을 해 줄지 이야기하며 노래를 불러 보세요.",
+        youtubeSearchQuery: "동요 나무가 된다면",
+        lyricsPreview: "내가 만약 나무가 된다면",
+      },
+    ],
+  },
 };

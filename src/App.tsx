@@ -390,8 +390,8 @@ export default function App() {
                     </h3>
                     <p className="text-slate-500 text-sm mt-3 leading-relaxed">
                       왼쪽에서{" "}
-                      <strong>3월 유치원과 친구 · 4월 봄 · 5월 나와 가족</strong>부터{" "}
-                      <strong>12월 겨울</strong>까지 주제를 누르면, 추천 동요와
+                      <strong>3월~12월 놀이주제</strong>와{" "}
+                      <strong>인성송</strong>을 누르면, 추천 동요와
                       유튜브 바로가기가 바로 열려요.
                     </p>
                   </div>

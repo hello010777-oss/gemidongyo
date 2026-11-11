@@ -54,5 +54,11 @@ export const POPULAR_THEMES: PlayTheme[] = [
     name: "새하얀 겨울",
     description: "펑펑 내리는 눈, 따뜻한 겨울을 돕는 이웃, 크리스마스 및 한 해 조용히 마무리",
     emoji: "❄️"
+  },
+  {
+    month: "인성",
+    name: "인성송",
+    description: "마음을 키우는 인성 동요로 일상 속 인성교육 실천하기",
+    emoji: "💜"
   }
 ];

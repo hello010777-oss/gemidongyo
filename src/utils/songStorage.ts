@@ -1,7 +1,7 @@
 import { DEFAULT_RECOMMENDATIONS } from "../data/recommendations";
 import { RecommendationResponse, Song } from "../types";
 
-const STORAGE_KEY = "dongyo-custom-recommendations-v2";
+const STORAGE_KEY = "dongyo-custom-recommendations-v5";
 
 function cloneDefaults(): Record<string, RecommendationResponse> {
   return structuredClone(DEFAULT_RECOMMENDATIONS);
