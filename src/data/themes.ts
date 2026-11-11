@@ -15,7 +15,7 @@ export const POPULAR_THEMES: PlayTheme[] = [
   },
   {
     month: "5월",
-    name: "우리 가족과 나",
+    name: "나와 가족",
     description: "소중한 우리 가족, 몸의 각 부분과 감정을 알고 스스로를 소중히 하기",
     emoji: "💖"
   },

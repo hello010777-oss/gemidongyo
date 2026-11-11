@@ -1,19 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Song } from "../types";
-import { Youtube, Music, Sparkles, BookOpen, ThumbsUp, Layers, Copy, Check } from "lucide-react";
-import { useState } from "react";
+import {
+  Youtube,
+  Music,
+  BookOpen,
+  ThumbsUp,
+  Copy,
+  Check,
+  Pencil,
+  Trash2,
+} from "lucide-react";
 import { motion } from "motion/react";
 
 interface SongCardProps {
   song: Song;
   index: number;
+  editMode?: boolean;
+  onEdit?: (song: Song) => void;
+  onDelete?: (song: Song) => void;
 }
 
-export default function SongCard({ song, index }: SongCardProps): React.ReactElement {
-  const { title, themeReason, keyWords, recommendedActivity, youtubeSearchQuery, lyricsPreview } = song;
+export default function SongCard({
+  song,
+  index,
+  editMode = false,
+  onEdit,
+  onDelete,
+}: SongCardProps): React.ReactElement {
+  const {
+    title,
+    themeReason,
+    keyWords,
+    recommendedActivity,
+    youtubeSearchQuery,
+    lyricsPreview,
+  } = song;
   const [copied, setCopied] = useState(false);
 
-  // Copy lyrics snippet to clipboard
   const handleCopyText = async () => {
     try {
       const textToCopy = `곡제목: ${title}\n대표가사: ${lyricsPreview}\n추천 이유: ${themeReason}\n연계 놀이 활동: ${recommendedActivity}`;
@@ -33,24 +56,48 @@ export default function SongCard({ song, index }: SongCardProps): React.ReactEle
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
       className="bg-white/90 backdrop-blur-md border-3 border-[#DCEFF1] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full hover:translate-y-[-4px]"
       id={`song-card-${index}`}
     >
-      {/* Top Header Card Accent */}
       <div className="bg-[#DCEFF1] px-6 py-4 flex items-center justify-between border-b-2 border-dashed border-[#B6DCE1]">
-        <div className="flex items-center gap-2.5">
-          <div className="p-2 bg-white rounded-full text-[#3FA7B5] shadow-xs flex items-center justify-center">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="p-2 bg-white rounded-full text-[#3FA7B5] shadow-xs flex items-center justify-center shrink-0">
             <Music className="w-5 h-5" />
           </div>
-          <h3 className="text-xl font-bold text-[#2A6E78] tracking-tight">
+          <h3 className="text-xl font-bold text-[#2A6E78] tracking-tight truncate">
             {title}
           </h3>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 shrink-0">
+          {editMode && (
+            <>
+              <button
+                type="button"
+                onClick={() => onEdit?.(song)}
+                className="p-1.5 hover:bg-white rounded-lg text-slate-500 hover:text-[#3FA7B5] transition-colors cursor-pointer"
+                title="수정"
+              >
+                <Pencil className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (confirm(`「${title}」을(를) 삭제할까요?`)) {
+                    onDelete?.(song);
+                  }
+                }}
+                className="p-1.5 hover:bg-white rounded-lg text-slate-500 hover:text-rose-500 transition-colors cursor-pointer"
+                title="삭제"
+              >
+                <Trash2 className="w-4 h-4" />
+              </button>
+            </>
+          )}
           <button
+            type="button"
             onClick={handleCopyText}
-            className="p-1.5 hover:bg-white rounded-lg text-gray-500 hover:text-emerald-600 transition-colors flex items-center gap-1 text-xs"
+            className="p-1.5 hover:bg-white rounded-lg text-gray-500 hover:text-emerald-600 transition-colors flex items-center gap-1 text-xs cursor-pointer"
             title="수업안 복사하기"
           >
             {copied ? (
@@ -69,7 +116,6 @@ export default function SongCard({ song, index }: SongCardProps): React.ReactEle
       </div>
 
       <div className="p-6 flex-1 flex flex-col gap-5">
-        {/* Lyrics Preview Speech Bubble */}
         <div className="relative bg-orange-50 rounded-2xl p-4 border border-orange-100 flex flex-col justify-center min-h-[70px]">
           <div className="absolute top-[-8px] left-6 w-4 h-4 bg-orange-50 border-t border-l border-orange-100 rotate-45" />
           <p className="text-[#A25A38] text-sm md:text-base font-bold text-center italic tracking-wide">
@@ -77,9 +123,7 @@ export default function SongCard({ song, index }: SongCardProps): React.ReactEle
           </p>
         </div>
 
-        {/* Content Paragraphs */}
         <div className="flex-1 flex flex-col gap-4">
-          {/* Recommend Reason */}
           <div>
             <div className="flex items-center gap-1.5 text-xs font-bold text-teal-700 uppercase mb-1">
               <span className="p-0.5 bg-teal-100 rounded-sm">
@@ -92,7 +136,6 @@ export default function SongCard({ song, index }: SongCardProps): React.ReactEle
             </p>
           </div>
 
-          {/* Activity Guideline */}
           <div className="bg-[#F9FCFC] p-4 rounded-xl border border-teal-50">
             <div className="flex items-center gap-1.5 text-xs font-bold text-[#2A6E78] uppercase mb-1.5">
               <span className="p-0.5 bg-[#E6F4F5] rounded-sm">
@@ -106,7 +149,6 @@ export default function SongCard({ song, index }: SongCardProps): React.ReactEle
           </div>
         </div>
 
-        {/* Keywords and Youtube Button Area */}
         <div className="pt-2 border-t border-slate-100 flex flex-col gap-3">
           <div className="flex flex-wrap gap-1.5">
             {keyWords.map((word, wIdx) => (
